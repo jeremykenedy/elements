@@ -337,7 +337,7 @@ export function appendHttpServicesToToC(toc: ITableOfContents, type: TocType) {
     models: NodeData[];
   }) => {
     const standaloneModels = models.slice();
-    httpServices.forEach(httpService => {
+    sortBy(httpServices, 'name').forEach(httpService => {
       let tocNode: ITableOfContents | Group;
       if (type === 'api') {
         tocNode = toc;
