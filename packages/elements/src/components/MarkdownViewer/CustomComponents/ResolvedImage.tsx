@@ -1,4 +1,4 @@
-import { IImage } from '@stoplight/markdown';
+import { MDAST } from '@stoplight/markdown';
 import { dirname, resolve } from '@stoplight/path';
 import React from 'react';
 import URI from 'urijs';
@@ -6,7 +6,7 @@ import URI from 'urijs';
 import { BundledBranchNode, IntegrationKind } from '../../../types';
 
 type ResolvedImageProps = {
-  node: IImage;
+  node: MDAST.IImage;
 };
 
 export const createResolvedImageComponent = (branchNode: BundledBranchNode) =>

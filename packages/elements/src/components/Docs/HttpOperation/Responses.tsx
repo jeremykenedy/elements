@@ -1,5 +1,5 @@
 import { JsonSchemaViewer } from '@stoplight/json-schema-viewer';
-import { Box, Select, Tab, TabList, TabPanel, Tabs, Text } from '@stoplight/mosaic';
+import { Box, Select, Tab, TabList, TabPanel, TabPanels, Tabs } from '@stoplight/mosaic';
 import { IHttpOperationResponse } from '@stoplight/types';
 import { sortBy, uniqBy } from 'lodash';
 import * as React from 'react';
@@ -45,24 +45,23 @@ export const Responses = ({ responses: unsortedResponses, onStatusCodeChange, on
 
   return (
     <Tabs selectedId={activeResponseId} onChange={setActiveResponseId}>
-      <Box>
-        <SectionTitle title="Responses">
-          <TabList>
-            {responses.map(({ code }) => (
-              <Tab key={code} id={code}>
-                <Text color={code === activeResponseId ? 'primary' : 'muted'}>{code}</Text>
-              </Tab>
-            ))}
-          </TabList>
-        </SectionTitle>
-        <Box mt={4}>
-          {responses.map(response => (
-            <TabPanel key={response.code} tabId={response.code}>
-              <Response response={response} onMediaTypeChange={onMediaTypeChange} />
-            </TabPanel>
+      <SectionTitle title="Responses">
+        <TabList>
+          {responses.map(({ code }) => (
+            <Tab key={code} id={code}>
+              {code}
+            </Tab>
           ))}
-        </Box>
-      </Box>
+        </TabList>
+      </SectionTitle>
+
+      <TabPanels>
+        {responses.map(response => (
+          <TabPanel key={response.code} id={response.code}>
+            <Response response={response} onMediaTypeChange={onMediaTypeChange} />
+          </TabPanel>
+        ))}
+      </TabPanels>
     </Tabs>
   );
 };
@@ -85,7 +84,11 @@ export const Response = ({
 
   return (
     <Box>
-      {description && <MarkdownViewer className="ml-1 mb-6" markdown={description} />}
+      {description && (
+        <Box ml={1} mb={6}>
+          <MarkdownViewer markdown={description} />
+        </Box>
+      )}
 
       {headers.length > 0 && (
         <SubSectionPanel title="Headers">

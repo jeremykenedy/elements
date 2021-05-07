@@ -1,11 +1,11 @@
-import { ILink } from '@stoplight/markdown';
+import { MDAST } from '@stoplight/markdown';
 import { MarkdownComponent } from '@stoplight/markdown-viewer';
 import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 
 const externalRegex = new RegExp('^(?:[a-z]+:)?//', 'i');
 
-export const ReactRouterMarkdownLink: MarkdownComponent<ILink> = ({ node: { url, title }, children }) => {
+export const ReactRouterMarkdownLink: MarkdownComponent<MDAST.ILink> = ({ node: { url, title }, children }) => {
   const isExternal = externalRegex.test(url);
   if (isExternal) {
     return (

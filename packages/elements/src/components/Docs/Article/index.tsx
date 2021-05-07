@@ -1,4 +1,4 @@
-import { IRoot as MarkdownAstRoot } from '@stoplight/markdown';
+import { MDAST } from '@stoplight/markdown';
 import { processMarkdown } from '@stoplight/markdown-viewer';
 import { withErrorBoundary } from '@stoplight/react-error-boundary';
 import cn from 'classnames';
@@ -8,7 +8,7 @@ import { MarkdownViewer } from '../../MarkdownViewer';
 import { IDocsComponentProps } from '..';
 import { ArticleHeadings } from './Headings';
 
-export type ArticleProps = IDocsComponentProps<string | MarkdownAstRoot>;
+export type ArticleProps = IDocsComponentProps<string | MDAST.IRoot>;
 
 const ArticleComponent = React.memo<ArticleProps>(({ data, className }) => {
   const [container, setContainer] = React.useState<HTMLDivElement | null>(null);

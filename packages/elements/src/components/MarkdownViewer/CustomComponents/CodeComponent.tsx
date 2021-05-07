@@ -1,5 +1,5 @@
-import { ICode } from '@stoplight/markdown/ast-types/smdast';
-import { defaultComponentMapping, ICodeAnnotations, IComponentMappingProps } from '@stoplight/markdown-viewer';
+import { SMDAST } from '@stoplight/markdown';
+import { DefaultSMDComponents, ICodeAnnotations, IComponentMappingProps } from '@stoplight/markdown-viewer';
 import { HttpParamStyles, IHttpOperation, IHttpRequest } from '@stoplight/types';
 import { get, isObject } from 'lodash';
 import React from 'react';
@@ -22,7 +22,7 @@ function isPartialHttpRequest(maybeHttpRequest: unknown): maybeHttpRequest is Pa
   );
 }
 
-export const CodeComponent = (props: IComponentMappingProps<ICode<ICodeAnnotations>>) => {
+export const CodeComponent = (props: IComponentMappingProps<SMDAST.ICode<ICodeAnnotations>>) => {
   const {
     node: { annotations, value, resolved, meta },
   } = props;
@@ -46,7 +46,7 @@ export const CodeComponent = (props: IComponentMappingProps<ICode<ICodeAnnotatio
     return <TryIt httpOperation={isHttpOperation(parsedValue) ? parsedValue : parseHttpRequest(parsedValue)} />;
   }
 
-  const DefaultCode = defaultComponentMapping.code!;
+  const DefaultCode = DefaultSMDComponents.code!;
   return <DefaultCode {...props} />;
 };
 

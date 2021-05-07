@@ -5,9 +5,10 @@ export type TableOfContentsProps = {
 };
 
 export type CustomLinkComponent = React.ComponentType<{
-  className: string;
-  to: string;
   children: React.ReactNode;
+  to: string;
+  className?: string;
+  hash?: string;
 }>;
 
 export type TableOfContentsItem = TableOfContentsDivider | TableOfContentsGroupItem;

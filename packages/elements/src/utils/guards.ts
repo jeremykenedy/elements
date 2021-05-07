@@ -1,11 +1,11 @@
-import * as SMDAST from '@stoplight/markdown';
+import { MDAST } from '@stoplight/markdown';
 import { isArray } from '@stoplight/mosaic';
 import { IHttpOperation, IHttpRequest, IHttpService, INode } from '@stoplight/types';
 import { isObject, isPlainObject } from 'lodash';
 
 import { JSONSchema } from '../types';
 
-export function isSMDASTRoot(maybeAst: unknown): maybeAst is SMDAST.IRoot {
+export function isSMDASTRoot(maybeAst: unknown): maybeAst is MDAST.IRoot {
   return isObject(maybeAst) && maybeAst['type'] === 'root' && isArray(maybeAst['children']);
 }
 

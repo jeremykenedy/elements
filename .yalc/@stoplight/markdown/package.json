@@ -1,0 +1,42 @@
+{
+  "name": "@stoplight/markdown",
+  "version": "0.0.0-94bac72a",
+  "description": "Useful functions when working with Markdown.",
+  "keywords": [
+    "markdown",
+    "markdown parser",
+    "parser",
+    "sourcemap"
+  ],
+  "main": "index.js",
+  "sideEffects": false,
+  "files": [
+    "**/*"
+  ],
+  "author": "Stoplight <support@stoplight.io>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stoplightio/markdown"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=10.8"
+  },
+  "dependencies": {
+    "@stoplight/types": "^12.2.0",
+    "@stoplight/yaml": "^4.2.2",
+    "lodash": "^4.17.21",
+    "mdast-util-to-string": "^2.0.0",
+    "remark-frontmatter": "^2.0.0",
+    "remark-inline-links": "^5.0.0",
+    "remark-parse": "^8.0.3",
+    "remark-slug": "^6.0.0",
+    "remark-stringify": "^8.1.1",
+    "source-component": "^1.2.1",
+    "tslib": "^2.2.0",
+    "unified": "^9.2.1",
+    "unist-util-select": "^3.0.4",
+    "unist-util-visit": "^2.0.3"
+  },
+  "typings": "index.d.ts"
+}
