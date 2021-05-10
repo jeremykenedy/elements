@@ -1,7 +1,6 @@
-import { SMDAST } from '@stoplight/markdown';
-import { DefaultSMDComponents, ICodeAnnotations, IComponentMappingProps } from '@stoplight/markdown-viewer';
+import { CustomComponentMapping, DefaultSMDComponents } from '@stoplight/markdown-viewer';
 import { HttpParamStyles, IHttpOperation, IHttpRequest } from '@stoplight/types';
-import { get, isObject } from 'lodash';
+import { isObject } from 'lodash';
 import React from 'react';
 import URI from 'urijs';
 
@@ -22,23 +21,21 @@ function isPartialHttpRequest(maybeHttpRequest: unknown): maybeHttpRequest is Pa
   );
 }
 
-export const CodeComponent = (props: IComponentMappingProps<SMDAST.ICode<ICodeAnnotations>>) => {
-  const {
-    node: { annotations, value, resolved, meta },
-  } = props;
-  const nodeType = get(annotations, 'type') || meta;
+export const CodeComponent: CustomComponentMapping['code'] = props => {
+  const { title, children, json_schema, http } = props;
 
-  const parsedValue = useParsedValue(resolved ?? value);
+  // const parsedValue = useParsedValue(resolved ?? value);
+  const parsedValue = useParsedValue(children);
 
-  if (nodeType === 'json_schema') {
+  if (json_schema) {
     if (!isJSONSchema(parsedValue)) {
       return null;
     }
 
-    return <SchemaAndDescription title={annotations?.title} schema={parsedValue} />;
+    return <SchemaAndDescription title={title} schema={parsedValue} />;
   }
 
-  if (nodeType === 'http') {
+  if (http) {
     if (!isObject(parsedValue) || (!isPartialHttpRequest(parsedValue) && !isHttpOperation(parsedValue))) {
       return null;
     }
@@ -47,6 +44,7 @@ export const CodeComponent = (props: IComponentMappingProps<SMDAST.ICode<ICodeAn
   }
 
   const DefaultCode = DefaultSMDComponents.code!;
+
   return <DefaultCode {...props} />;
 };
 

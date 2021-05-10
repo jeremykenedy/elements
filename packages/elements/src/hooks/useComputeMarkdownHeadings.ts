@@ -6,13 +6,13 @@ import { IArticleHeading } from '../types';
 
 const selectAll = require('unist-util-select').selectAll;
 
-export function useComputeMarkdownHeadings(tree: MDAST.IRoot) {
+export function useComputeMarkdownHeadings(tree: MDAST.Root) {
   return React.useMemo(() => computeMarkdownHeadings(tree), [tree]);
 }
 
-export function computeMarkdownHeadings(tree: MDAST.IRoot): IArticleHeading[] {
+export function computeMarkdownHeadings(tree: MDAST.Root): IArticleHeading[] {
   return selectAll(':root > [type=heading]', tree)
-    .map((heading: MDAST.IHeading) => ({
+    .map((heading: MDAST.Heading) => ({
       title: findTitle(heading),
       id: heading.data && (heading.data.id as string | undefined),
       depth: heading.depth - 1,
@@ -21,5 +21,5 @@ export function computeMarkdownHeadings(tree: MDAST.IRoot): IArticleHeading[] {
 }
 
 const findTitle = (parent: Parent) => {
-  return (selectAll('[type=text]', parent) as MDAST.ITextNode[]).map(textNode => String(textNode.value)).join(' ');
+  return (selectAll('[type=text]', parent) as MDAST.Text[]).map(textNode => String(textNode.value)).join(' ');
 };

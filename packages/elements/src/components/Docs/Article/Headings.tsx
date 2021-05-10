@@ -10,7 +10,7 @@ import { useComputeMarkdownHeadings } from '../../../hooks/useComputeMarkdownHea
 import { useLocationHash } from '../../../hooks/useLocationHash';
 import { IArticleHeading, IArticleHeadings } from '../../../types';
 
-export const ArticleHeadings = ({ tree, container }: { tree: MDAST.IRoot; container: HTMLDivElement | null }) => {
+export const ArticleHeadings = ({ tree, container }: { tree: MDAST.Root; container: HTMLDivElement | null }) => {
   const { width } = useComponentSize(container);
   const showHeadings = width >= 768;
 

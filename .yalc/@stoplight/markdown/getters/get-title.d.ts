@@ -1,2 +1,2 @@
-import * as Unist from 'unist';
-export declare const getTitle: (data?: Unist.Node | undefined) => string | void | undefined;
+import { MDAST } from '../ast-types';
+export declare const getTitle: (data?: MDAST.Root) => string | void;

@@ -5,7 +5,7 @@ import { isObject, isPlainObject } from 'lodash';
 
 import { JSONSchema } from '../types';
 
-export function isSMDASTRoot(maybeAst: unknown): maybeAst is MDAST.IRoot {
+export function isSMDASTRoot(maybeAst: unknown): maybeAst is MDAST.Root {
   return isObject(maybeAst) && maybeAst['type'] === 'root' && isArray(maybeAst['children']);
 }
 

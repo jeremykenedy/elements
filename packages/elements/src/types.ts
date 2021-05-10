@@ -1,4 +1,4 @@
-import { SMDAST } from '@stoplight/markdown';
+import { MDAST } from '@stoplight/markdown';
 import { Dictionary, IHttpOperation, IHttpService, NodeType } from '@stoplight/types';
 import type { FAIconProp, ITableOfContentsLink } from '@stoplight/ui-kit';
 import { JSONSchema4, JSONSchema6, JSONSchema7 } from 'json-schema';
@@ -6,7 +6,7 @@ import { JSONSchema4, JSONSchema6, JSONSchema7 } from 'json-schema';
 export type ParsedNode =
   | {
       type: NodeType.Article;
-      data: string | SMDAST.IRoot;
+      data: string | MDAST.Root;
     }
   | {
       type: NodeType.HttpOperation;
