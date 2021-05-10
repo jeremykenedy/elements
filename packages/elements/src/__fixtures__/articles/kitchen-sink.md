@@ -14,9 +14,12 @@ title: Stoplight Flavored Markdown
 1. Stoplight flavored markdown extends github flavor markdown with inline comment annotations.
 2. The value inside of the annotations is a yaml object, and the annotation affects the following markdown block.
 
-By leveraging comments to store annotations, Stoplight flavored markdown degrades gracefully to any other markdown renderer (Github, for example).
+By leveraging comments to store annotations, Stoplight flavored markdown degrades gracefully to any other markdown
+renderer (Github, for example).
 
-> [MDX](https://github.com/mdx-js/mdx) is an interesting project that might allow our users to add more interactivity to their docs, at the cost of complexity (this is a more advanced use case). We would have to figure out a way to introduce this WITHOUT impacting those users that do not need the feature.
+> [MDX](https://github.com/mdx-js/mdx) is an interesting project that might allow our users to add more interactivity to
+> their docs, at the cost of complexity (this is a more advanced use case). We would have to figure out a way to
+> introduce this WITHOUT impacting those users that do not need the feature.
 
 ## Tabs
 
@@ -145,27 +148,33 @@ function fibonacci(num) {
 
 ## JSON Schema
 
-A smd json schema block is a smd code block with the `json_schema` language tag. The contents of the code fence should
-be the json schema object to be rendered.
+A smd json schema block is a smd code block with the `jsonSchema` meta tag. The contents of the code fence should be the
+json schema object to be rendered.
 
-<!-- type: json_schema -->
-
-```json
-{
-  "$ref": "https://stoplight.io/api/nodes.raw?srn=gh/stoplightio/studio-demo/reference/todos/models/todo-full.json"
-}
+```yaml jsonSchema
+title: Error
+type: object
+description: A standard error object.
+x-tags:
+  - Common
+properties:
+  code:
+    type: string
+    description: A code.
+  message:
+    type: string
+required:
+  - code
 ```
 
 ## HTTP Try It Out
 
-A smd http try it out block is a smd code block with the `http` language tag. The contents of the code fence should
-be the http object to be rendered.
+A smd http try it out block is a smd code block with the `http` language tag. The contents of the code fence should be
+the http object to be rendered.
 
 ### Raw Http Request
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "method": "get",
   "url": "/gifs/search",
@@ -180,9 +189,7 @@ be the http object to be rendered.
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "method": "get",
   "url": "/gifs/search",
@@ -199,18 +206,14 @@ be the http object to be rendered.
 
 ### Request from Http Operation
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "../../reference/todos/openapi.v1.json/paths/~1todos/get"
 }
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "../../reference/todos/openapi.v1.json/paths/~1todos/get"
 }
@@ -219,18 +222,14 @@ be the http object to be rendered.
 
 ### From a remote Http Operation
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "https://stoplight.io/api/nodes.raw?srn=gh/stoplightio/sample-specs/reference/giphy/giphy.yaml/paths/~1gifs~1search/get"
 }
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "https://stoplight.io/api/nodes.raw?srn=gh/stoplightio/sample-specs/reference/giphy/giphy.yaml/paths/~1gifs~1search/get"
 }

@@ -73,13 +73,14 @@ export interface Code extends Literal {
     type: 'code';
     lang?: string;
     meta?: string;
+    resolved?: unknown;
     annotations?: {
         title?: string;
         lineNumbers?: boolean;
         highlightLines?: string[] | string[][];
         inline?: boolean;
         live?: boolean;
-        json_schema?: boolean;
+        jsonSchema?: boolean | 'true' | 'false';
         http?: boolean;
     };
 }

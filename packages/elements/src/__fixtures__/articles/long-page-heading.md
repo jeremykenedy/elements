@@ -145,12 +145,10 @@ function fibonacci(num) {
 
 ## JSON Schema
 
-A smd json schema block is a smd code block with the `json_schema` language tag. The contents of the code fence should
+A smd json schema block is a smd code block with the `jsonSchema` language tag. The contents of the code fence should
 be the json schema object to be rendered.
 
-<!-- type: json_schema -->
-
-```json
+```json jsonSchema
 {
   "$ref": "../../reference/common/models/error.v1.yaml"
 }
@@ -163,9 +161,7 @@ be the http object to be rendered.
 
 ### Raw Http Request
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "method": "get",
   "url": "/gifs/search",
@@ -180,9 +176,7 @@ be the http object to be rendered.
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "method": "get",
   "url": "/gifs/search",
@@ -199,18 +193,14 @@ be the http object to be rendered.
 
 ### Request from Http Operation
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "../../reference/todos/openapi.v1.json/paths/~1todos/get"
 }
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "../../reference/todos/openapi.v1.json/paths/~1todos/get"
 }
@@ -219,18 +209,14 @@ be the http object to be rendered.
 
 ### From a remote Http Operation
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "https://stoplight.io/api/nodes.raw?srn=gh/stoplightio/sample-specs/reference/giphy/giphy.yaml/paths/~1gifs~1search/get"
 }
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "https://stoplight.io/api/nodes.raw?srn=gh/stoplightio/sample-specs/reference/giphy/giphy.yaml/paths/~1gifs~1search/get"
 }
@@ -382,12 +368,10 @@ function fibonacci(num) {
 
 ## JSON Schema
 
-A smd json schema block is a smd code block with the `json_schema` language tag. The contents of the code fence should
+A smd json schema block is a smd code block with the `jsonSchema` language tag. The contents of the code fence should
 be the json schema object to be rendered.
 
-<!-- type: json_schema -->
-
-```json
+```json jsonSchema
 {
   "$ref": "../../reference/common/models/error.v1.yaml"
 }
@@ -400,9 +384,7 @@ be the http object to be rendered.
 
 ### Raw Http Request
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "method": "get",
   "url": "/gifs/search",
@@ -417,9 +399,7 @@ be the http object to be rendered.
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "method": "get",
   "url": "/gifs/search",
@@ -436,18 +416,14 @@ be the http object to be rendered.
 
 ### Request from Http Operation
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "../../reference/todos/openapi.v1.json/paths/~1todos/get"
 }
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "../../reference/todos/openapi.v1.json/paths/~1todos/get"
 }
@@ -456,18 +432,14 @@ be the http object to be rendered.
 
 ### From a remote Http Operation
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "https://stoplight.io/api/nodes.raw?srn=gh/stoplightio/sample-specs/reference/giphy/giphy.yaml/paths/~1gifs~1search/get"
 }
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "https://stoplight.io/api/nodes.raw?srn=gh/stoplightio/sample-specs/reference/giphy/giphy.yaml/paths/~1gifs~1search/get"
 }
@@ -615,12 +587,10 @@ function fibonacci(num) {
 
 ## JSON Schema
 
-A smd json schema block is a smd code block with the `json_schema` language tag. The contents of the code fence should
+A smd json schema block is a smd code block with the `jsonSchema` language tag. The contents of the code fence should
 be the json schema object to be rendered.
 
-<!-- type: json_schema -->
-
-```json
+```json jsonSchema
 {
   "$ref": "../../reference/common/models/error.v1.yaml"
 }
@@ -633,9 +603,7 @@ be the http object to be rendered.
 
 ### Raw Http Request
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "method": "get",
   "url": "/gifs/search",
@@ -650,9 +618,7 @@ be the http object to be rendered.
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "method": "get",
   "url": "/gifs/search",
@@ -669,18 +635,14 @@ be the http object to be rendered.
 
 ### Request from Http Operation
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "../../reference/todos/openapi.v1.json/paths/~1todos/get"
 }
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "../../reference/todos/openapi.v1.json/paths/~1todos/get"
 }
@@ -689,18 +651,14 @@ be the http object to be rendered.
 
 ### From a remote Http Operation
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "https://stoplight.io/api/nodes.raw?srn=gh/stoplightio/sample-specs/reference/giphy/giphy.yaml/paths/~1gifs~1search/get"
 }
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "https://stoplight.io/api/nodes.raw?srn=gh/stoplightio/sample-specs/reference/giphy/giphy.yaml/paths/~1gifs~1search/get"
 }
@@ -848,12 +806,10 @@ function fibonacci(num) {
 
 ## JSON Schema
 
-A smd json schema block is a smd code block with the `json_schema` language tag. The contents of the code fence should
+A smd json schema block is a smd code block with the `jsonSchema` language tag. The contents of the code fence should
 be the json schema object to be rendered.
 
-<!-- type: json_schema -->
-
-```json
+```json jsonSchema
 {
   "$ref": "../../reference/common/models/error.v1.yaml"
 }
@@ -866,9 +822,7 @@ be the http object to be rendered.
 
 ### Raw Http Request
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "method": "get",
   "url": "/gifs/search",
@@ -883,9 +837,7 @@ be the http object to be rendered.
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "method": "get",
   "url": "/gifs/search",
@@ -902,18 +854,14 @@ be the http object to be rendered.
 
 ### Request from Http Operation
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "../../reference/todos/openapi.v1.json/paths/~1todos/get"
 }
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "../../reference/todos/openapi.v1.json/paths/~1todos/get"
 }
@@ -922,18 +870,14 @@ be the http object to be rendered.
 
 ### From a remote Http Operation
 
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "https://stoplight.io/api/nodes.raw?srn=gh/stoplightio/sample-specs/reference/giphy/giphy.yaml/paths/~1gifs~1search/get"
 }
 ```
 
 ````md
-<!-- type: http -->
-
-```json
+```json http
 {
   "$ref": "https://stoplight.io/api/nodes.raw?srn=gh/stoplightio/sample-specs/reference/giphy/giphy.yaml/paths/~1gifs~1search/get"
 }

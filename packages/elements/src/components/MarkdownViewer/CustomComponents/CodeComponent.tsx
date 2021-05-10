@@ -22,12 +22,12 @@ function isPartialHttpRequest(maybeHttpRequest: unknown): maybeHttpRequest is Pa
 }
 
 export const CodeComponent: CustomComponentMapping['code'] = props => {
-  const { title, children, json_schema, http } = props;
+  const { title, children, jsonSchema, http, resolved } = props;
 
-  // const parsedValue = useParsedValue(resolved ?? value);
-  const parsedValue = useParsedValue(children);
+  const value = children ? children[0] : '';
+  const parsedValue = useParsedValue(resolved ?? value);
 
-  if (json_schema) {
+  if (jsonSchema) {
     if (!isJSONSchema(parsedValue)) {
       return null;
     }

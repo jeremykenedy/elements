@@ -1,16 +1,17 @@
 import type { MDAST } from '@stoplight/markdown';
 import { ErrorBoundaryProps } from '@stoplight/react-error-boundary';
 import * as React from 'react';
+import { ParseOptions } from './utils';
 export interface IMarkdownViewer extends IMarkdownViewerProps, ErrorBoundaryProps {
 }
 export interface IMarkdownViewerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onError'> {
     markdown: string | MDAST.Root;
     className?: string;
-    components?: CustomComponentMapping;
+    parseOptions?: ParseOptions;
 }
 export declare type DefaultComponentMapping = {
     blockquote: React.FunctionComponent<MDAST.Blockquote['annotations']>;
-    code: React.FunctionComponent<Pick<MDAST.Code, 'lang'> & MDAST.Code['annotations']>;
+    code: React.FunctionComponent<Pick<MDAST.Code, 'lang' | 'resolved'> & MDAST.Code['annotations']>;
     tabs: React.FunctionComponent<any>;
     tab: React.FunctionComponent<any>;
     codegroup: React.FunctionComponent<any>;
